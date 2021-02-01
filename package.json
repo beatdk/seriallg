@@ -21,7 +21,7 @@
   "author": "Rasmus Porsager <rasmus@porsager.com",
   "license": "WTFPL",
   "dependencies": {
-    "serialport": "9.0.6"
+    "serialport": "6.2.2"
   },
   "keywords": [
     "serial",
