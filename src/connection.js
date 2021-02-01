@@ -2,6 +2,13 @@ import SP from 'serialport'
 
 const connections = {}
 
+async function list() {
+  return (await SP.list()).map(x => (
+    x.path = x.path || x.comName,
+    x
+  ))
+}
+
 export default async function Connection({
   idleTimeout = 10000,
   queryTimeout = 2000,
@@ -9,9 +16,9 @@ export default async function Connection({
   path
 } = {}) {
   path = typeof path === 'function'
-    ? path(await SP.list())
+    ? path(await list())
     : path
-    || ((await SP.list()).find(x => x.path.match('usbserial|COM[0-9]')) || {}).path
+    || ((await list()).find(x => x.path.match('usbserial|COM[0-9]')) || {}).path
 
   if (path in connections)
     return connections[path]
