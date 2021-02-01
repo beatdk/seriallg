@@ -20,7 +20,7 @@
   ],
   "author": "Rasmus Porsager <rasmus@porsager.com",
   "license": "WTFPL",
-  "dependencies": {
+  "optionalDependencies": {
     "serialport": "6.2.2"
   },
   "keywords": [
