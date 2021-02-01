@@ -18,7 +18,7 @@ export default async function Connection({
   path = typeof path === 'function'
     ? path(await list())
     : path
-    || ((await list()).find(x => x.path.match('usbserial|COM[0-9]')) || {}).path
+    || ((await list()).sort(a => a.path === 'COM3' ? -1 : 0).find(x => x.path.match('usbserial|COM[0-9]')) || {}).path
 
   if (path in connections)
     return connections[path]
