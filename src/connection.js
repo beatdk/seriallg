@@ -98,7 +98,7 @@ export default async function Connection({
       current.reject('Malformed reply ' + x)
     else if (current.command[1] !== command)
       current.reject('Wrong command in reply - got ' + command + ' expected ' + current.command[1])
-    else if (status === 'OK')
+    else if (status === 'OK' || (data === '00' && current.command === 'ka' && current.data[0] === '00'))
       current.resolve(data)
     else
       current.reject(data)
