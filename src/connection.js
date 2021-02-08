@@ -86,8 +86,8 @@ export default async function Connection({
   function write(x) {
     startIdleTimeout()
     queryTimer = setTimeout(queryTimedOut, queryTimeout)
-    const message = [x.command, x.id, ...x.data].join(' ') + '\r'
-    c.write(message)
+    message = ''
+    c.write([x.command, x.id, ...x.data].join(' ') + '\r')
   }
 
   function handle(x) {
