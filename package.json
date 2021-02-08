@@ -1,6 +1,6 @@
 {
   "name": "seriallg",
-  "version": "0.0.6-legacy",
+  "version": "0.0.7-legacy",
   "description": "",
   "type": "module",
   "module": "./src/index.js",
