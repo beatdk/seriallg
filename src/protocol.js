@@ -64,7 +64,7 @@ export default {
   bass: ['ks', range],
   balance: ['kt', range],
   basic_3d: ['xt', any, any, any, any],
-  color_temperatur: ['xu', range],
+  color_temperature: ['xu', range],
   extended_3d: ['xv', any, any],
   ism: ['jp', {
     orbiter: '02',
